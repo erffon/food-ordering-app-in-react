@@ -1,4 +1,4 @@
-# 🍕 Food Ordering App using Reac.js
+# 🍕 Food Ordering App using React.js
 
 These days I’m learning React and this project is one of my very first exercises.
 
