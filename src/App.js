@@ -11,17 +11,17 @@ function App() {
 
   const [modalIsShowed,setModalIsShowed]=useState(false);
 
-  const modalIsShowHandler = ()=>{
+  const showCartHandler = ()=>{
     setModalIsShowed(true);
   }
-  const modalNotShowed = ()=>{
+  const hideCartHandler = ()=>{
     setModalIsShowed(false);
   }
 
   return (
     <Fragment>
-      {modalIsShowed && <Cart/>}
-      <Header/>
+      {modalIsShowed && <Cart onHideCart={hideCartHandler}/>}
+      <Header onShowCart={showCartHandler}/>
       <main>
         <Meals/>
       </main>
