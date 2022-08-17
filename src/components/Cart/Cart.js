@@ -2,6 +2,7 @@ import classes from "./Cart.module.css";
 import Modal from "../../components/ui/Modal";
 import { useContext } from "react";
 import CartContext from "../../store/cart-context";
+import CartItem from "./CartItem";
 
 const Cart = (props) => {
 
@@ -9,10 +10,13 @@ const Cart = (props) => {
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasitem = cartCtx.item.length >0;
 
+    const cartItemRemoveHandler= ()=>{};
+    const cartItemAddHandler= ()=>{};
+
   const cartitem = (
     <ul className={classes["cart-item"]}>
       {cartCtx.item.map((item) => {
-        return <li>{item.name}</li>;
+        return (<CartItem key={item.id} name={item.name} price={item.price} amount={item.amount} onRemove={cartItemRemoveHandler.bind(null,item.id)} onAdd={cartItemAddHandler.bind(null,item)}/>);
       })}
     </ul>
   );
